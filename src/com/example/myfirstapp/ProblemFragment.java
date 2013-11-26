@@ -22,6 +22,8 @@ import android.widget.TextView;
 
 public class ProblemFragment extends Fragment implements AdapterView.OnItemClickListener {
 	
+	private static final String PROMPT = "com.example.myfirstapp.prompt";
+	
 	private OnProblemCompletedListener mCallback;
 	private String mRawPrompt;
 	private ArrayList<String> mOptions = new ArrayList<String>();
@@ -54,7 +56,7 @@ public class ProblemFragment extends Fragment implements AdapterView.OnItemClick
         // Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.problem_view, container, false);
 		
-		mRawPrompt = getArguments().getString("prompt");
+		mRawPrompt = getArguments().getString(PROMPT);
 		mOptions = processPrompt(mRawPrompt);
 		mCorrectOption = mOptions.get(0);
 		Collections.shuffle(mOptions, new Random(System.nanoTime()));
@@ -118,7 +120,7 @@ public class ProblemFragment extends Fragment implements AdapterView.OnItemClick
 	public static ProblemFragment newInstance(String string) {
 		ProblemFragment newFragment = new ProblemFragment();
 		Bundle args = new Bundle();
-		args.putString("prompt", string);
+		args.putString(PROMPT, string);
 		newFragment.setArguments(args);
 		return newFragment;
 	}

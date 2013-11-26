@@ -8,14 +8,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
     
-<!--     <fragment -->
-<!--         android:id="@+id/problem_fragment" -->
-<!--         android:name="com.example.myfirstapp.ProblemFragment" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="match_parent" -->
-<!--         android:layout_above="@+id/footer" -->
-<!--         tools:layout="@layout/problem_view" /> -->
-    
     <TextView
 	android:id="@+id/footer"
     android:layout_width="match_parent"
